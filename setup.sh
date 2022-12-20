@@ -2,4 +2,4 @@
 
 apt install python3-pip
 pip install django
-echo "232"
+pip install django-cors-headers
