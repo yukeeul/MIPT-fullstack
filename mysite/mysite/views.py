@@ -16,4 +16,4 @@ def home(request):
     for flight in model.objects.raw('SELECT * FROM flights_flight WHERE city_from="{}" AND city_to="{}" AND Date(departure_date)="{}"'.format(city_from, city_to, date)):
         ans.append({"city_from" : flight.city_from, "city_to" : flight.city_to, "price" : flight.price, "departure_date" : flight.departure_date, "arrival_date" : flight.arrival_date})
         
-    return response
+    return JsonResponse({'ans': ans})
