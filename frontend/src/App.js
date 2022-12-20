@@ -11,7 +11,7 @@ function App() {
   
   const getApiData = async () => {
       const response = await fetch(
-        "http://158.160.54.112:8000/flights?var1=" + var1 + "&var2=" + var2 + "&var3=" + var3
+        "http://158.160.54.112:8000?var1=" + var1 + "&var2=" + var2 + "&var3=" + var3, { mode: 'no-cors'}
       ).then((response) => response.json());
 
 
