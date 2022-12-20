@@ -11,7 +11,7 @@ function App() {
   
   const getApiData = async () => {
       const response = await fetch(
-        "http://127.0.0.1:8000?var1=" + var1 + "&var2=" + var2 + "&var3=" + var3
+        "http://158.160.54.112:8000?var1=" + var1 + "&var2=" + var2 + "&var3=" + var3
       ).then((response) => response.json());
 
 
