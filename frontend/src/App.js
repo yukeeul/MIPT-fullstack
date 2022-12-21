@@ -62,9 +62,6 @@ function App() {
   
   const handleBuyClick = async (e) => {
     let id = e.target.id;
-    if (id == "-1"){
-        alert("111");
-    }
     e.preventDefault();
     const result = await buyTicket({
       token,
@@ -88,16 +85,6 @@ function App() {
     </div >
     
     <div id="main-div"> 
-        {answer.length > 0? 
-         <div  id="first-flight-container">
-            <div className="first-text-div"> <p className ="flight-text"> Откуда </p> </div>
-            <div className="first-text-div"> <p className ="flight-text"> Куда </p> </div>
-            <div className="first-text-div"> <p className ="flight-text"> Отправление </p> </div>
-            <div className="first-text-div"> <p className ="flight-text"> Прибытие </p> </div>
-            <div className="first-text-div"> <p className ="flight-text"> Цена </p> </div>
-            <div className="text-div"> <button id="mock-button"> Купить</button> </div>
-         </div>
-        : null } 
         {answer.map((flight, index) => (
           <div key={index} className="flight-container">
             <div className="text-div"> <p className ="flight-text"> {flight[0]} </p> </div>
