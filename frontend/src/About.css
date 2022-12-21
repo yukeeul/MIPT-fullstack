@@ -1,5 +1,8 @@
-#root{
+#outer-div{
     background-color: #93B2FF;   
+    height:100%;
+    width:100%;
+    
 }
 
 body{

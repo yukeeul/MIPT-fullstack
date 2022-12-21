@@ -51,7 +51,7 @@ function App() {
       let arr = []
       let temp = Array.from(response.ans);
       for (let i = 0; i < temp.length; i++) {
-        arr.push([temp[i].city_from, temp[i].city_to, temp[i].departure_date, temp[i].arrival_date, temp[i].price, temp[i].id]);
+        arr.push([temp[i].city_from, temp[i].city_to, temp[i].departure_date.substr(11, 5), temp[i].arrival_date.substr(11, 5), temp[i].price + " руб", temp[i].id]);
       }
       setAnswer(arr);
   };
@@ -62,6 +62,9 @@ function App() {
   
   const handleBuyClick = async (e) => {
     let id = e.target.id;
+    if (id == "-1"){
+        alert("111");
+    }
     e.preventDefault();
     const result = await buyTicket({
       token,
@@ -84,15 +87,24 @@ function App() {
       </div>
     </div >
     
-    <div id="main-div">  
+    <div id="main-div"> 
+        {answer.length > 0? 
+         <div  id="first-flight-container">
+            <div className="text-div"> <p className ="flight-text"> Откуда </p> </div>
+            <div className="text-div"> <p className ="flight-text"> Куда </p> </div>
+            <div className="text-div"> <p className ="flight-text"> Отправление </p> </div>
+            <div className="text-div"> <p className ="flight-text"> Прибытие </p> </div>
+            <div className="text-div"> <p className ="flight-text"> Цена </p> </div>
+         </div>
+        : null } 
         {answer.map((flight, index) => (
           <div key={index} className="flight-container">
-            <div className="text-div"> <p> {flight[0]} </p> </div>
-            <div className="text-div"> <p> {flight[1]} </p> </div>
-            <div className="text-div"> <p> {flight[2]} </p> </div>
-            <div className="text-div"> <p> {flight[3]} </p> </div>
-            <div className="text-div"> <p> {flight[4]} </p> </div>
-            <div className="text-div"> <button id={flight[5]} onClick={handleBuyClick}> temp text </button> </div>
+            <div className="text-div"> <p className ="flight-text"> {flight[0]} </p> </div>
+            <div className="text-div"> <p className ="flight-text"> {flight[1]} </p> </div>
+            <div className="text-div"> <p className ="flight-text"> {flight[2]} </p> </div>
+            <div className="text-div"> <p className ="flight-text"> {flight[3]} </p> </div>
+            <div className="text-div"> <p className ="flight-text"> {flight[4]} </p> </div>
+            <div className="text-div"> <button className="buy-button" id={flight[5]} onClick={handleBuyClick}> Купить</button> </div>
           </div>
         ))}
 

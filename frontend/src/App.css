@@ -44,34 +44,59 @@ body {
     padding-left: 1%;
     padding-top: 0.5%;
     padding-bottom: 0.5%;
-    text-align:center;
+    text-align: center;
+    border-radius: 5px;
     
+}
+
+#first-flight-container{
+    position: sticky;
+    background-color: white;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    margin-left: 10%;
+    height: 10%;
+    width: 65%;
+    border-radius:15px;
 }
 
 .flight-container{
     position: sticky;
     background-color: white;
     margin-bottom: 5%;
-    margin-top: 10%;
+    margin-top: 5%;
     margin-left: 10%;
     height: 10%;
     width: 80%;
+    border-radius:15px;
 }
 
+.flight-text{
+    font-size: 125%;
+}
+
+.buy-button{
+    width: 200%;
+    line-height: 25px;
+    background-color: #EA7A3B;
+    opacity: 0.7;
+    text-align: center;
+    border-radius: 5px;
+    font-size:130%;
+}
 
 .text-div{
   display: inline-block;
-  margin-top: auto;
-  margin-bottom: auto;
-  margin-left:5%;
-  margin-right:5%;
+  margin-top: 0.8%;
+  margin-bottom: 1%;
+  margin-left:6.5%;
+  margin-right:6.5%;
 }
 
 
 
 button{
     margin-top: 0%;
-    
 }
 
 input{ 

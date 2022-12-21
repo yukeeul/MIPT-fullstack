@@ -11,11 +11,13 @@ function About() {
 
   return (
   <>
-    <p id="return-text" onClick={navigateHome}> На главную </p>
-    <div id="padding-div">
-        <h1 className="about-text"> Сайт сделан для курса по full-stack разработке </h1>
-        <h1 className="about-text"> Github: <a href="https://github.com/yukeeul/MIPT-fullstack"> https://github.com/yukeeul/MIPT-fullstack </a> </h1>
-        <h1 className="about-text"> МФТИ 2022</h1>
+    <div id="outer-div">
+        <p id="return-text" onClick={navigateHome}> На главную </p>
+        <div id="padding-div">
+            <h1 className="about-text"> Сайт сделан для курса по full-stack разработке </h1>
+            <h1 className="about-text"> Github: <a href="https://github.com/yukeeul/MIPT-fullstack"> https://github.com/yukeeul/MIPT-fullstack </a> </h1>
+            <h1 className="about-text"> МФТИ 2022</h1>
+        </div>
     </div>
   </>
   );
