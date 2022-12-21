@@ -73,11 +73,13 @@ function App() {
   return (
   <>
     <div id="top-div">
+      <h1> GetTicket </h1>
+      <h3> О проекте </h3>
       <div id="top-inner-div">
           <input type="text" id="input1"  placeholder="Откуда"/>
           <input type="text" id="input2"  placeholder="Куда"/>
           <input type="text" id="input3"  placeholder="ГГГГ-ММ-ДД"/>
-          <button id="find-button" onClick={handleSearchClick}> Нажми на меня</button>
+          <button id="find-button" onClick={handleSearchClick}> Найти билеты</button>
       </div>
     </div >
     

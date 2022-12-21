@@ -12,8 +12,6 @@ def home(request):
             city_from = request.GET['var1']
             city_to = request.GET['var2']
             date = request.GET['var3']
-            print(city_from, city_to, date)
-            print(city_from == 'Piter')
         except:
             return HttpResponse("incorrect request")
         
