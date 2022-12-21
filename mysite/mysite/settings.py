@@ -25,8 +25,18 @@ SECRET_KEY = 'django-insecure-bt)sa+(w6j039poc$7kz5nht7t69f0*#lhmj*%+svuothx11em
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
-CORS_ORIGIN_ALLOW_ALL = True
+ALLOWED_HOSTS = ['*'] 
+CORS_ALLOW_ALL_ORIGINS = True
+
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:3000",
+    "http://62.84.117.158:3000"
+]
+
+CORS_ALLOW_METHODS = [
+    'GET',
+    'POST',
+]
 
 
 # Application definition
@@ -41,6 +51,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'flights',
     'tickets',
+    'frontAuth',
 ]
 
 MIDDLEWARE = [
