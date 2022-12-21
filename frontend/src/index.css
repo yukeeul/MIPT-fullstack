@@ -32,7 +32,7 @@ body {
     opacity: 0.78;
 }
 
-#flight-container{
+.flight-container{
     position: sticky;
     background-color: white;
     margin-bottom: 5%;
