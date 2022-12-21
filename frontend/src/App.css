@@ -56,7 +56,7 @@ body {
     margin-top: 5%;
     margin-left: 10%;
     height: 10%;
-    width: 65%;
+    width: 80%;
     border-radius:15px;
 }
 
@@ -75,6 +75,16 @@ body {
     font-size: 125%;
 }
 
+#mock-button{
+    width: 200%;
+    line-height: 25px;
+    background-color: #EA7A3B;
+    opacity: 0;
+    text-align: center;
+    border-radius: 5px;
+    font-size:130%;
+}
+
 .buy-button{
     width: 200%;
     line-height: 25px;
@@ -83,16 +93,24 @@ body {
     text-align: center;
     border-radius: 5px;
     font-size:130%;
+
 }
 
 .text-div{
-  display: inline-block;
-  margin-top: 0.8%;
-  margin-bottom: 1%;
-  margin-left:6.5%;
-  margin-right:6.5%;
+    display: inline-block;
+    margin-top: 0.8%;
+    margin-bottom: 1%;
+    margin-left:3%;
+    margin-right:6.5%;
 }
 
+.first-text-div{    
+    display: inline-block;
+    margin-top: 0.8%;
+    margin-bottom: 1%;
+    margin-left: 3.5%;
+    margin-right: 4.5%;
+}
 
 
 button{
