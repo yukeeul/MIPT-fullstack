@@ -85,6 +85,16 @@ function App() {
     </div >
     
     <div id="main-div"> 
+        {answer.length > 0? 
+         <div  id="first-flight-container">
+            <div className="text-div1"> <p className ="flight-text"> Откуда </p> </div>
+            <div className="text-div5"> <p className ="flight-text"> Куда </p> </div>
+            <div className="text-div2"> <p className ="flight-text"> Отправление </p> </div>
+            <div className="text-div3"> <p className ="flight-text"> Прибытие </p> </div>
+            <div className="text-div4"> <p className ="flight-text"> Цена </p> </div>
+            <div className="text-div"> <p className ="flight-text"> Купить </p> </div>
+         </div>
+        : null } 
         {answer.map((flight, index) => (
           <div key={index} className="flight-container">
             <div className="text-div"> <p className ="flight-text"> {flight[0]} </p> </div>
