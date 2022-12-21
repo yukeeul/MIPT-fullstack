@@ -77,7 +77,4 @@ def buy_ticket(request):
         return HttpResponseBadRequest()
         
         
-        
-        
-        
-        
+

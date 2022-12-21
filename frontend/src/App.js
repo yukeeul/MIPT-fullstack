@@ -1,7 +1,7 @@
 import './App.css';
 import Login from './Login';
 
-
+import { useNavigate } from "react-router-dom";
 import { useState} from 'react';
 
 function setToken(userToken) {
@@ -29,6 +29,10 @@ async function buyTicket(credentials) {
 function App() {
   let token = getToken();
   const [answer, setAnswer] = useState([]);
+  const navigate = useNavigate();
+  const navigateToAbout = () => {
+    navigate('/about');
+  };
   
   if(!token || JSON.parse(token).token === "INCORRECT") {
     return <Login setToken={setToken} />
@@ -50,8 +54,6 @@ function App() {
         arr.push([temp[i].city_from, temp[i].city_to, temp[i].departure_date, temp[i].arrival_date, temp[i].price, temp[i].id]);
       }
       setAnswer(arr);
-      console.log(arr);
-      console.log(typeof arr);
   };
   
   const handleSearchClick = () => {
@@ -66,15 +68,14 @@ function App() {
       id
     });
     alert(result.status);
-    
   }
-
-
+  
+  
   return (
   <>
     <div id="top-div">
-      <h1> GetTicket </h1>
-      <h3> О проекте </h3>
+      <h1 id="title"> GetTicket </h1>
+      <h3 onClick={navigateToAbout}> О проекте </h3>
       <div id="top-inner-div">
           <input type="text" id="input1"  placeholder="Откуда"/>
           <input type="text" id="input2"  placeholder="Куда"/>
