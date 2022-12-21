@@ -13,14 +13,27 @@ function getToken() {
   return tokenString;
 }
 
+async function buyTicket(credentials) {
+ return fetch('http://158.160.54.112:8000/buy/', {
+   method: 'POST',
+   headers: {
+     'Content-Type': 'application/json'
+   },
+   body: JSON.stringify(credentials)
+ })
+   .then(data => data.json())
+}
+
+
 
 function App() {
-  const token = getToken();
+  let token = getToken();
   const [answer, setAnswer] = useState([]);
   
   if(!token || JSON.parse(token).token === "INCORRECT") {
     return <Login setToken={setToken} />
   }
+  token = JSON.parse(token).token;
   
   const getApiData = async () => {
       let var1 = document.getElementById('input1').value;
@@ -34,7 +47,7 @@ function App() {
       let arr = []
       let temp = Array.from(response.ans);
       for (let i = 0; i < temp.length; i++) {
-        arr.push([temp[i].city_from, temp[i].city_to, temp[i].departure_date, temp[i].arrival_date, temp[i].price]);
+        arr.push([temp[i].city_from, temp[i].city_to, temp[i].departure_date, temp[i].arrival_date, temp[i].price, temp[i].id]);
       }
       setAnswer(arr);
       console.log(arr);
@@ -45,9 +58,15 @@ function App() {
     getApiData();
   };
   
-  const handleBuyClick = (e) => {
+  const handleBuyClick = async (e) => {
     let id = e.target.id;
-    alert(e.target.id);
+    e.preventDefault();
+    const result = await buyTicket({
+      token,
+      id
+    });
+    alert(result.status);
+    
   }
 
 
@@ -70,7 +89,7 @@ function App() {
             <div className="text-div"> <p> {flight[2]} </p> </div>
             <div className="text-div"> <p> {flight[3]} </p> </div>
             <div className="text-div"> <p> {flight[4]} </p> </div>
-            <div className="text-div"> <button id={index} onClick={handleBuyClick}> temp text </button> </div>
+            <div className="text-div"> <button id={flight[5]} onClick={handleBuyClick}> temp text </button> </div>
           </div>
         ))}
 
