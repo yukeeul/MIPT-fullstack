@@ -46,7 +46,7 @@ function App() {
       let city_to = document.getElementById('input2').value;
       let date = document.getElementById('input3').value;
       const response = await fetch(
-        "http://158.160.54.112:8000?var1=" + city_from + "&var2=" + city_to + "&var3=" + date
+        "http://158.160.54.112:8000/flights/?var1=" + city_from + "&var2=" + city_to + "&var3=" + date
       ).then((response) => response.json());
 
 

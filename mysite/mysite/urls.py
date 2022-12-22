@@ -20,7 +20,7 @@ from .views import  buy_ticket
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('flights.urls')),
+    path('flights/', include('flights.urls')),
     path('login/', include('frontAuth.urls')),
     path('buy/', buy_ticket),
 ]
