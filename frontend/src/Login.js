@@ -32,11 +32,11 @@ export default function Login({ setToken }) {
       <form onSubmit={handleSubmit}>
         <label>
           <p  className="field-name">Username</p>
-          <input className="login-input" type="text" onChange={e => setUserName(e.target.value)} />
+          <input className="login-input" placeholder="admin" type="text" onChange={e => setUserName(e.target.value)} />
         </label>
         <label>
           <p className="field-name">Password</p>
-          <input className="login-input"  type="password" onChange={e => setPassword(e.target.value)} />
+          <input className="login-input"  type="password" placeholder="admin" onChange={e => setPassword(e.target.value)} />
         </label>
         <div>
           <button type="submit">Submit</button>
