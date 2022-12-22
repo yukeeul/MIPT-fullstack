@@ -20,8 +20,7 @@ from .views import home, login, buy_ticket
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('flights/', include('flights.urls')),
-    path('', home),
+    path('', include('flights.urls')),
     path('login/', login),
     path('buy/', buy_ticket),
 ]
