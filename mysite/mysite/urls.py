@@ -16,11 +16,11 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
-from .views import login, buy_ticket
+from .views import  buy_ticket
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('flights.urls')),
-    path('login/', login),
+    path('login/', include('frontAuth.urls')),
     path('buy/', buy_ticket),
 ]
