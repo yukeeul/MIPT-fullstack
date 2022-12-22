@@ -34,17 +34,19 @@ function App() {
     navigate('/about');
   };
   
+  
   if(!token || JSON.parse(token).token === "INCORRECT") {
     return <Login setToken={setToken} />
   }
   token = JSON.parse(token).token;
   
+  
   const getApiData = async () => {
-      let var1 = document.getElementById('input1').value;
-      let var2 = document.getElementById('input2').value;
-      let var3 = document.getElementById('input3').value;
+      let city_from = document.getElementById('input1').value;
+      let city_to = document.getElementById('input2').value;
+      let date = document.getElementById('input3').value;
       const response = await fetch(
-        "http://158.160.54.112:8000?var1=" + var1 + "&var2=" + var2 + "&var3=" + var3
+        "http://158.160.54.112:8000?var1=" + city_from + "&var2=" + city_to + "&var3=" + date
       ).then((response) => response.json());
 
 
@@ -67,7 +69,10 @@ function App() {
       token,
       id
     });
-    alert(result.status);
+    let button = document.getElementById(id);
+    if (result.status === "COMPLETED"){
+        button.style.setProperty('background-color', "#7FFF00");
+    }
   }
   
   
@@ -92,7 +97,7 @@ function App() {
             <div className="text-div2"> <p className ="flight-text"> Отправление </p> </div>
             <div className="text-div3"> <p className ="flight-text"> Прибытие </p> </div>
             <div className="text-div4"> <p className ="flight-text"> Цена </p> </div>
-            <div className="text-div"> <p className ="flight-text"> Купить </p> </div>
+            <div className="text-div6"> <p className ="flight-text" > Купить </p> </div>
          </div>
         : null } 
         {answer.map((flight, index) => (
