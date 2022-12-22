@@ -16,7 +16,7 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
-from .views import home, login, buy_ticket
+from .views import login, buy_ticket
 
 urlpatterns = [
     path('admin/', admin.site.urls),
